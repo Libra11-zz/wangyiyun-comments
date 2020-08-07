@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Libra";
+  src: url("Libra.ttf") format("truetype");
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Libra;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #223147;
+  box-shadow: inset 5px 5px 100px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content {
+  color: #cbb79b;
+  font-size: 48px;
+  max-width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 996px) {
+  .container .content {
+    font-size: 24px;
+    max-width: 90%;
+  }
+}
+/*创建box*/
+#stars {
+  z-index: 2;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/*画出流星的形状*/
+.star {
+  display: block;
+  opacity: 0;
+  position: relative;
+  left: 90%;
+  width: 1px;
+  background: transparent;
+  /*流星动画*/
+  animation: star-fall 3s linear infinite;
+}
+/*流星后面的尾巴*/
+.star:after {
+  content: " ";
+  display: block;
+  border: 1px solid #fff;
+  border-width: 0px 100px 2px 150px;
+  left: 5px;
+  transform: rotate(-45deg);
+  border-color: transparent transparent transparent #eee;
+}
+/*创建动画，实现流星划过、渐入渐隐的效果*/
+@keyframes star-fall {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translate3d(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(-200px, 200px, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2) translate3d(-300px, 300px, 0);
+  }
+}
