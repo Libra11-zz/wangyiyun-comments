@@ -1,3 +1,7 @@
+let content = document.querySelector(".content");
+let html = document.documentElement;
+
+content.innerHTML = "正在加载";
 let resData = [
   { content: "你有这种期待 我有这种打算 但是 天外来物 不算大招吗..." },
   { content: "“世界上终有一个人能降服你 妖怪”大概这个意思" },
@@ -52085,8 +52089,7 @@ let resData = [
       "茉莉雨间奏中使用的duduk，是一种传统的亚美尼亚杏木乐器，其声音苍凉，孤独，带着浓浓的悲剧色彩，也反映出了这个民族曾经所遭受的苦难。",
   },
 ];
-let content = document.querySelector(".content");
-let html = document.documentElement;
+
 function randomNum(minNum, maxNum) {
   switch (arguments.length) {
     case 1:

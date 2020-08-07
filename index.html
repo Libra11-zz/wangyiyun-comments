@@ -9,14 +9,19 @@
   <body>
     <div class="container">
       <div class="content"></div>
+      <audio
+        style="position: absolute; left: 0; top: 0; display: none;"
+        controls="controls"
+        loop="loop"
+        autoplay="autoplay"
+      >
+        <source src="./CMJ-所念皆星河.mp3" type="audio/mp3" />
+        Your browser does not support this audio format.
+      </audio>
     </div>
     <div id="stars">
       <div class="star"></div>
     </div>
-    <audio controls="controls">
-      <source src="song.mp3" type="audio/mp3" />
-      Your browser does not support this audio format.
-    </audio>
     <script>
       window.onload = function () {
         var stars = document.getElementById("stars"); //获取stars Box
